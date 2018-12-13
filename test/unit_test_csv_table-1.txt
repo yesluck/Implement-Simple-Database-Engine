@@ -1,0 +1,501 @@
+********************    Starting test_optimizable_1, optimize = False    ********************
+
+
+
+
+Dude. This takes 30 minutes. Trust me.
+
+
+
+
+********************    Starting test_optimizable_2, optimize = True    ********************
+
+
+People table metadata =
+ {
+  "definition": {
+    "name": "people",
+    "path": "../data/People.csv"
+  },
+  "columns": [
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "nameLast",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "nameFirst",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCity",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCountry",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "throws",
+      "column_type": "text",
+      "not_null": false
+    }
+  ],
+  "indexes": {}
+}
+Batting table metadata =
+ {
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    }
+  ],
+  "indexes": {}
+}
+Loaded people table =
+  Name: people File: ../data/People.csv
+Row count: 19370
+{
+  "definition": {
+    "name": "people",
+    "path": "../data/People.csv"
+  },
+  "columns": [
+    {
+      "column_name": "birthCity",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCountry",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "nameFirst",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "nameLast",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "throws",
+      "column_type": "text",
+      "not_null": false
+    }
+  ],
+  "indexes": {
+    "pid_idx": {
+      "index_name": "pid_idx",
+      "columns": [
+        "playerID"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+ Index information:
+Name: pid_idx, Columns: ['playerID'], No. of entries: 19370
+
+Sample rows:
+birthCity      birthCountry   nameFirst      nameLast       playerID       throws
+Denver         USA            David          Aardsma        aardsda01      R
+Mobile         USA            Hank           Aaron          aaronha01      R
+Mobile         USA            Tommie         Aaron          aaronto01      R
+Orange         USA            Don            Aase           aasedo01       R
+Palm Beach     USA            Andy           Abad           abadan01       L
+...            ...            ...            ...            ...            ...
+Monee          USA            Tony           Zych           zychto01       R
+St. Louis      USA            Dutch          Zwilling       zwilldu01      L
+Holland        USA            George         Zuverink       zuverge01      R
+San Mateo      USA            Paul           Zuvella        zuvelpa01      R
+San Francisco  USA            Frank          Zupo           zupofr01       R
+
+
+Loaded batting table =
+  Name: batting File: ../data/Batting.csv
+Row count: 104324
+{
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {}
+}
+ Index information:
+
+Sample rows:
+AB             H              playerID       stint          teamID         yearID
+4              0              abercda01      1              TRO            1871
+118            32             addybo01       1              RC1            1871
+137            40             allisar01      1              CL1            1871
+133            44             allisdo01      1              WS3            1871
+120            39             ansonca01      1              RC1            1871
+...            ...            ...            ...            ...            ...
+0              0              zychto01       1              SEA            2017
+387            97             zuninmi01      1              SEA            2017
+435            101            zobribe01      1              CHN            2017
+524            159            zimmery01      1              WAS            2017
+6              1              zimmejo02      1              DET            2017
+
+
+Result =
+  Name: JOIN(people, batting) File: DERIVED
+Row count: 104324
+
+Sample rows:
+AB             H              playerID       stint          teamID         yearID         birthCity      birthCountry   nameFirst      nameLast       throws
+4              0              abercda01      1              TRO            1871           Fort Towson    USA            Frank          Abercrombie
+118            32             addybo01       1              RC1            1871           Port Hope      CAN            Bob            Addy           L
+137            40             allisar01      1              CL1            1871           Philadelphia   USA            Art            Allison
+133            44             allisdo01      1              WS3            1871           Philadelphia   USA            Doug           Allison        R
+120            39             ansonca01      1              RC1            1871           Marshalltown   USA            Cap            Anson          R
+...            ...            ...            ...            ...            ...            ...            ...            ...            ...            ...
+0              0              zychto01       1              SEA            2017           Monee          USA            Tony           Zych           R
+387            97             zuninmi01      1              SEA            2017           Cape Coral     USA            Mike           Zunino         R
+435            101            zobribe01      1              CHN            2017           Eureka         USA            Ben            Zobrist        R
+524            159            zimmery01      1              WAS            2017           Washington     USA            Ryan           Zimmerman      R
+6              1              zimmejo02      1              DET            2017           Auburndale     USA            Jordan         Zimmermann     R
+
+
+
+
+Elapsed time =  0.7453498840332031
+
+
+********************    Complete test_join_optimizable_2    ********************
+
+
+
+
+********************    Starting test_optimizable_3, optimize = True    ********************
+
+
+People table metadata =
+ {
+  "definition": {
+    "name": "people",
+    "path": "../data/People.csv"
+  },
+  "columns": [
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "nameLast",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "nameFirst",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCity",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCountry",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "throws",
+      "column_type": "text",
+      "not_null": false
+    }
+  ],
+  "indexes": {
+    "pid_idx": {
+      "index_name": "pid_idx",
+      "columns": [
+        "playerID"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+Batting table metadata =
+ {
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    }
+  ],
+  "indexes": {}
+}
+Loaded people table =
+  Name: people File: ../data/People.csv
+Row count: 19370
+{
+  "definition": {
+    "name": "people",
+    "path": "../data/People.csv"
+  },
+  "columns": [
+    {
+      "column_name": "birthCity",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "birthCountry",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "nameFirst",
+      "column_type": "text",
+      "not_null": false
+    },
+    {
+      "column_name": "nameLast",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "throws",
+      "column_type": "text",
+      "not_null": false
+    }
+  ],
+  "indexes": {
+    "pid_idx": {
+      "index_name": "pid_idx",
+      "columns": [
+        "playerID"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+ Index information:
+Name: pid_idx, Columns: ['playerID'], No. of entries: 19370
+
+Sample rows:
+birthCity      birthCountry   nameFirst      nameLast       playerID       throws
+Denver         USA            David          Aardsma        aardsda01      R
+Mobile         USA            Hank           Aaron          aaronha01      R
+Mobile         USA            Tommie         Aaron          aaronto01      R
+Orange         USA            Don            Aase           aasedo01       R
+Palm Beach     USA            Andy           Abad           abadan01       L
+...            ...            ...            ...            ...            ...
+Monee          USA            Tony           Zych           zychto01       R
+St. Louis      USA            Dutch          Zwilling       zwilldu01      L
+Holland        USA            George         Zuverink       zuverge01      R
+San Mateo      USA            Paul           Zuvella        zuvelpa01      R
+San Francisco  USA            Frank          Zupo           zupofr01       R
+
+
+Loaded batting table =
+  Name: batting File: ../data/Batting.csv
+Row count: 104324
+{
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "pid_idx": {
+      "index_name": "pid_idx",
+      "columns": [
+        "playerID"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+ Index information:
+Name: pid_idx, Columns: ['playerID'], No. of entries: 19182
+
+Sample rows:
+AB             H              playerID       stint          teamID         yearID
+4              0              abercda01      1              TRO            1871
+118            32             addybo01       1              RC1            1871
+137            40             allisar01      1              CL1            1871
+133            44             allisdo01      1              WS3            1871
+120            39             ansonca01      1              RC1            1871
+...            ...            ...            ...            ...            ...
+0              0              zychto01       1              SEA            2017
+387            97             zuninmi01      1              SEA            2017
+435            101            zobribe01      1              CHN            2017
+524            159            zimmery01      1              WAS            2017
+6              1              zimmejo02      1              DET            2017
+
+
+Result =
+  Name: JOIN(people, batting) File: DERIVED
+Row count: 19
+
+Sample rows:
+birthCity      birthCountry   nameFirst      nameLast       playerID       throws         AB             H              stint          teamID         yearID
+San Diego      USA            Ted            Williams       willite01      R              565            185            1              BOS            1939
+San Diego      USA            Ted            Williams       willite01      R              561            193            1              BOS            1940
+San Diego      USA            Ted            Williams       willite01      R              456            185            1              BOS            1941
+San Diego      USA            Ted            Williams       willite01      R              522            186            1              BOS            1942
+San Diego      USA            Ted            Williams       willite01      R              514            176            1              BOS            1946
+...            ...            ...            ...            ...            ...            ...            ...            ...            ...            ...
+San Diego      USA            Ted            Williams       willite01      R              310            98             1              BOS            1960
+San Diego      USA            Ted            Williams       willite01      R              272            69             1              BOS            1959
+San Diego      USA            Ted            Williams       willite01      R              411            135            1              BOS            1958
+San Diego      USA            Ted            Williams       willite01      R              420            163            1              BOS            1957
+San Diego      USA            Ted            Williams       willite01      R              400            138            1              BOS            1956
+
+
+
+
+Elapsed time =  0.07191181182861328
+
+
+********************    Complete test_join_optimizable_3    ********************

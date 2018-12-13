@@ -1,0 +1,223 @@
+********************    Starting test_optimizable_4, optimize = True    ********************
+
+
+Batting table metadata =
+ {
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "tid_idx": {
+      "index_name": "tid_idx",
+      "columns": [
+        "teamID"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+Loaded batting table =
+  Name: batting File: ../data/Batting.csv
+Row count: 104324
+{
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "tid_idx": {
+      "index_name": "tid_idx",
+      "columns": [
+        "teamID"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+ Index information:
+Name: tid_idx, Columns: ['teamID'], No. of entries: 149
+
+Sample rows:
+AB             H              playerID       stint          teamID         yearID
+4              0              abercda01      1              TRO            1871
+118            32             addybo01       1              RC1            1871
+137            40             allisar01      1              CL1            1871
+133            44             allisdo01      1              WS3            1871
+120            39             ansonca01      1              RC1            1871
+...            ...            ...            ...            ...            ...
+0              0              zychto01       1              SEA            2017
+387            97             zuninmi01      1              SEA            2017
+435            101            zobribe01      1              CHN            2017
+524            159            zimmery01      1              WAS            2017
+6              1              zimmejo02      1              DET            2017
+
+
+Appearances table metadata =
+ {
+  "definition": {
+    "name": "appearances",
+    "path": "../data/Appearances.csv"
+  },
+  "columns": [
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "lgID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {}
+}
+Loaded appearances table =
+  Name: appearances File: ../data/Appearances.csv
+Row count: 104256
+{
+  "definition": {
+    "name": "appearances",
+    "path": "../data/Appearances.csv"
+  },
+  "columns": [
+    {
+      "column_name": "lgID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {}
+}
+ Index information:
+
+Sample rows:
+lgID           playerID       teamID         yearID
+NA             abercda01      TRO            1871
+NA             addybo01       RC1            1871
+NA             allisar01      CL1            1871
+NA             allisdo01      WS3            1871
+NA             ansonca01      RC1            1871
+...            ...            ...            ...
+AL             zychto01       SEA            2017
+AL             zuninmi01      SEA            2017
+NL             zobribe01      CHN            2017
+NL             zimmery01      WAS            2017
+AL             zimmejo02      DET            2017
+
+
+Result =
+  Name: JOIN(batting, appearances) File: DERIVED
+Row count: 3189796
+
+Sample rows:
+lgID           playerID       teamID         yearID         AB             H              stint
+AL             abbotgl01      SEA            1977           0              0              1
+AL             baezjo01       SEA            1977           305            79             1
+AL             bernhju01      SEA            1977           305            74             1
+AL             braunst01      SEA            1977           451            106            1
+AL             burkest01      SEA            1977           0              0              1
+...            ...            ...            ...            ...            ...            ...
+AL             zychto01       SEA            2017           0              0              1
+AL             zuninmi01      SEA            2017           387            97             1
+AL             whalero01      SEA            2017           0              0              1
+AL             weberry01      SEA            2017           0              0              1
+AL             vogelda01      SEA            2017           28             6              1
+
+
+
+
+Elapsed time =  2.7825028896331787
+
+
+********************    Complete test_join_optimizable_4    ********************

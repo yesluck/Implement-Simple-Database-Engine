@@ -1,0 +1,500 @@
+********************    Starting test_table_6    ********************
+
+
+Test1:
+ Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [],
+  "indexes": {}
+}
+
+
+Test2:
+ Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "CG",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {}
+}
+
+
+Test3:
+ Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "CG",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "teamID"
+      ],
+      "kind": "PRIMARY"
+    }
+  }
+}
+
+
+Test4:
+ Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "CG",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "teamID"
+      ],
+      "kind": "PRIMARY"
+    },
+    "data1": {
+      "index_name": "data1",
+      "columns": [
+        "AB"
+      ],
+      "kind": "INDEX"
+    },
+    "data2": {
+      "index_name": "data2",
+      "columns": [
+        "CG"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+
+
+Test5:
+ Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [
+    {
+      "column_name": "CG",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "teamID"
+      ],
+      "kind": "PRIMARY"
+    },
+    "data2": {
+      "index_name": "data2",
+      "columns": [
+        "CG"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+
+
+Test6:
+ People table {
+  "definition": {
+    "name": "People",
+    "path": "../data/People.csv"
+  },
+  "columns": [
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "playerID"
+      ],
+      "kind": "PRIMARY"
+    }
+  }
+}
+
+
+Test7:
+ Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [
+    {
+      "column_name": "CG",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "teamID"
+      ],
+      "kind": "PRIMARY"
+    }
+  }
+}
+
+
+
+
+********************    Complete test_table_6    ********************
+
+
+
+
+********************    Starting test_table_7    ********************
+
+
+Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [],
+  "indexes": {}
+}
+Exception e =  DataTableException: code: -100 , message: Column playerID is invalid.
+
+
+********************    SUCCESS test_table_7 should fail.    ********************
+
+
+
+
+********************    Complete test_table_7    ********************
+
+
+
+
+********************    Starting test_table_8    ********************
+
+
+Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [],
+  "indexes": {}
+}
+Exception e =  DataTableException: code: -401 , message: Column W is not in the column definition list.
+
+
+********************    SUCCESS test_table_8 should fail.    ********************
+
+
+
+
+********************    Complete test_table_8    ********************
+
+
+
+
+********************    Starting test_table_9    ********************
+
+
+Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [],
+  "indexes": {}
+}
+Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": false
+    }
+  ],
+  "indexes": {}
+}
+Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": false
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "teamID"
+      ],
+      "kind": "PRIMARY"
+    }
+  }
+}
+Exception e =  DataTableException: code: -403 , message: Index column HB is invalid.
+
+
+********************    SUCCESS test_table_9 should fail.    ********************
+
+
+
+
+********************    Complete test_table_9    ********************
+
+
+
+
+********************    Starting test_table_10    ********************
+
+
+Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [],
+  "indexes": {}
+}
+Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "CG",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {}
+}
+Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "CG",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "teamID"
+      ],
+      "kind": "PRIMARY"
+    }
+  }
+}
+Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "CG",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "teamID"
+      ],
+      "kind": "PRIMARY"
+    },
+    "data1": {
+      "index_name": "data1",
+      "columns": [
+        "AB"
+      ],
+      "kind": "INDEX"
+    },
+    "data2": {
+      "index_name": "data2",
+      "columns": [
+        "CG"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+Teams table {
+  "definition": {
+    "name": "teams",
+    "path": "../data/Teams.csv"
+  },
+  "columns": [
+    {
+      "column_name": "CG",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "teamID"
+      ],
+      "kind": "PRIMARY"
+    },
+    "data2": {
+      "index_name": "data2",
+      "columns": [
+        "CG"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+Exception e =  DataTableException: code: -403 , message: data1 is not in the index definition list.
+
+
+********************    SUCCESS test_table_10 should fail.    ********************
+
+
+
+
+********************    Complete test_table_10    ********************
+
+

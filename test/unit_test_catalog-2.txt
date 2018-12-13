@@ -1,0 +1,197 @@
+********************    Starting test_create_table_4_fail    ********************
+
+
+Exception e =  DataTableException: code: -403 , message: Index column HR is invalid.
+
+
+********************    SUCCESS test_create_table_4_fail should fail.    ********************
+
+
+
+
+********************    Starting test_create_table_5_prep    ********************
+
+
+Batting table {
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "playerID",
+        "teamID",
+        "yearID",
+        "stint"
+      ],
+      "kind": "PRIMARY"
+    }
+  }
+}
+
+
+********************    Completed test_create_table_5_prep    ********************
+
+
+
+
+********************    Starting test_create_table_5    ********************
+
+
+Initial status of table =
+ {
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "playerID",
+        "stint",
+        "teamID",
+        "yearID"
+      ],
+      "kind": "PRIMARY"
+    }
+  }
+}
+Modified status of table =
+ {
+  "definition": {
+    "name": "batting",
+    "path": "../data/Batting.csv"
+  },
+  "columns": [
+    {
+      "column_name": "AB",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "H",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "playerID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "stint",
+      "column_type": "number",
+      "not_null": true
+    },
+    {
+      "column_name": "teamID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "yearID",
+      "column_type": "text",
+      "not_null": true
+    },
+    {
+      "column_name": "HR",
+      "column_type": "number",
+      "not_null": false
+    },
+    {
+      "column_name": "G",
+      "column_type": "number",
+      "not_null": false
+    }
+  ],
+  "indexes": {
+    "PRIMARY": {
+      "index_name": "PRIMARY",
+      "columns": [
+        "playerID",
+        "stint",
+        "teamID",
+        "yearID"
+      ],
+      "kind": "PRIMARY"
+    },
+    "team_year_idx": {
+      "index_name": "team_year_idx",
+      "columns": [
+        "teamID",
+        "yearID"
+      ],
+      "kind": "INDEX"
+    }
+  }
+}
+
+
+********************    Success test_create_table_5    ********************

@@ -1,0 +1,5 @@
+[
+  "test_join_performance_1.py::test_join_not_optimized",
+  "test_join_performance_1.py::test_join_optimizable_2",
+  "test_join_performance_1.py::test_join_optimizable_3"
+]

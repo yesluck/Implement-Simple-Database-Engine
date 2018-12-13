@@ -6,29 +6,53 @@ Zikun Lin (zl2737)
 ## Part 1: Files Description
 
 README.md		This file
+
 /src:
+
 	CSVCatalog.py	My implementation of CSV Catalog, based on the scaffolding code.
+	
 	CSVTable.py	My implementation of CSV Table, based on the scaffolding code.
+	
 	DataTableExceptions.py	Define the common exceptions
+	
 /test:
-	unit_test_catalog-1.py		Prof’s test code 1.
-	unit_test_catalog-1.txt		My results for Prof’s test code 1.
-	unit_test_catalog-2.py		Prof’s test code 2.
-	unit_test_catalog-2.txt		My results for Prof’s test code 2.
+
+	unit_test_catalog-1.py		test code 1.
+	
+	unit_test_catalog-1.txt		My results for test code 1.
+	
+	unit_test_catalog-2.py		test code 2.
+	
+	unit_test_catalog-2.txt		My results for test code 2.
+	
 	unit_test_catalog-3.py		My own test code, added 5 more test functions.
+	
 	unit_test_catalog-3.txt		My results for my own test code.
-	unit_test_csv_table-1.py	Prof’s test code.
-	unit_test_csv_table-1.txt	My results for Prof’s test code.
+	
+	unit_test_csv_table-1.py	test code.
+	
+	unit_test_csv_table-1.txt	My results for test code.
+	
 	unit_test_csv_table-2.py	My own test code, added 1 more test functions (joining Batting and Appearances).
+	
 	unit_test_csv_table-2.txt	My results for my own test code.
-	unit_tests_catalog_json.py	Prof’s test code.
-	unit_tests_catalog_json.txt	My results for Prof’s test code.
+	
+	unit_tests_catalog_json.py	test code.
+	
+	unit_tests_catalog_json.txt	My results for test code.
+	
 /data:
+
 	People.csv
+	
 	Teams.csv
+	
 	Batting.csv
+	
 	Appearances.csv
+	
 /sql:
+
 	create.sql SQL statements to create your tables and constraints for the catalog.
 
 
